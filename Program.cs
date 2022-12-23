@@ -1,11 +1,10 @@
-﻿namespace Project_1
+﻿namespace Project_2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int n1, n2;
-
+            int n1,n2;
             Console.WriteLine("Enter The Fitst Number: ");
 
             n1 = int.Parse(Console.ReadLine());
@@ -14,23 +13,19 @@
 
             n2 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("\nPrime numbers between {0} and {1} are: ", n1, n2);
-
-            for (int i = n1; i <= n2; i++)
+            Console.WriteLine("\nPerfect numbers between {0} and {1} are: ", n1, n2);
+            for (int n = n1; n <= n2; n++)
             {
-                int j;
-
-                for (j = 2; j < i ; j++)
+               int sum = 0;
+                for (int i=1; i < n;i++)
                 {
-                    if (i % j == 0)
-                    {
-                        break;
-                    }
+                    if (n % i == 0)
+                        sum = sum + i;
                 }
-                    if (j == i)
-                    Console.WriteLine(i);
+                if (sum == n)
+                    Console.WriteLine("{0} ", n);
             }
+            Console.Write("\n");
         }
     }
 }
-            
